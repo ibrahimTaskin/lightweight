@@ -13,7 +13,7 @@ namespace lightweight.business.Concrete
         private IRepository<Product> _productRepository;
         public ProductManager(IRepository<Product> productRepository)
         {
-            _productRepository = productRepository;
+            _productRepository = productRepository; // dependency injection
         }
 
         public ServiceResponse<Product> GetProducts()

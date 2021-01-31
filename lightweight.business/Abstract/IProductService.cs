@@ -7,6 +7,6 @@ namespace lightweight.business.Abstract
 {
     public interface IProductService
     {
-        ServiceResponse<Product> GetProducts();
+        ServiceResponse<Product> GetProducts(); // ServiceResponse türünden product istedik. Sadece imzasını tanımladık.
     }
 }

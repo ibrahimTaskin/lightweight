@@ -50,7 +50,7 @@ namespace lightweight.webapi
 
             services.AddDbContext<lwContext>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductService, ProductManager>(); // .Net Core IoC , IProduct Service isteyince ProductManager getir.
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddSwaggerGen(c =>
             {

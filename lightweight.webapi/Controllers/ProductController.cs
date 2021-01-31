@@ -23,9 +23,9 @@ namespace lightweight.webapi.Controllers
 
 
         [HttpGet]
-        public ServiceResponse<Product> Index()
+        public ServiceResponse<Product> Index() // GetProduct ServiceResponse türünden olduğu için O türden çağırdık.
         {
-            var response = _productService.GetProducts();
+            var response = _productService.GetProducts(); // Productları çektik.
             return response;
         }
     }
