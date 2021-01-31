@@ -12,19 +12,19 @@ namespace lightweight.webapi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        
+
         private IUserService _userService;
 
         public UserController(IUserService userService)
         {
             _userService = userService;
         }
-     
+
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public ServiceResponse<Users> Authenticate([FromBody]Users userParam)
+        public ServiceResponse<Users> Authenticate([FromBody] Users userParam)
         {
-            return _userService.Authenticate(userParam.email,userParam.password);
+            return _userService.Authenticate(userParam.email, userParam.password);
         }
 
         [Authorize(Roles = Role.Admin)]
@@ -34,5 +34,6 @@ namespace lightweight.webapi.Controllers
             var response = _userService.GetList();
             return response;
         }
+               
     }
 }

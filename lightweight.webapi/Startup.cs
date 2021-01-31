@@ -46,10 +46,11 @@ namespace lightweight.webapi
             });
             services.AddControllers(options => options.EnableEndpointRouting = false);
             services.AddHttpContextAccessor();
-     
+
 
             services.AddDbContext<lwContext>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProductService, ProductManager>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddSwaggerGen(c =>
             {
